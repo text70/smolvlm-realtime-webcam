@@ -93,3 +93,29 @@ Click **Start** and grant camera permission. The page sends each webcam frame to
 - **Security headers** — HSTS, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`
 - **Zero dependencies** — `server.js` uses only Node.js built-in modules; no npm packages
 - **Local by design** — all frames stay on your machine; the only network call is to the configured API endpoint
+
+## Contributing
+
+This is a single-file HTML app with no build system. All changes go in `index.html`. The HTTPS server is `server.js`.
+
+```sh
+# Edit the app
+index.html
+
+# Edit the server
+server.js
+
+# Preview locally
+node server.js
+```
+
+Before submitting a PR:
+
+- Test that the app loads and runs from `file://` and over HTTPS
+- Make sure keyboard shortcuts and localStorage persistence still work
+- Keep `index.html` self-contained — no external files, no CDN scripts
+- Keep `server.js` dependency-free — Node.js built-in modules only
+
+## License
+
+MIT
