@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmolVLM Surveillance</title>
+<title>Vidit</title>
 <style>
 :root {
   --bg: #eef0f3;
@@ -431,12 +431,12 @@ function saveState() {
     bgMode: bgMode.checked,
     dark: document.body.classList.contains('dark')
   };
-  try { localStorage.setItem('smolvlm-state', JSON.stringify(state)); } catch (e) {}
+  try { localStorage.setItem('vidit-state', JSON.stringify(state)); } catch (e) {}
 }
 
 function loadState() {
   try {
-    const raw = localStorage.getItem('smolvlm-state');
+    const raw = localStorage.getItem('vidit-state');
     if (!raw) return;
     const state = JSON.parse(raw);
     if (state.baseURL) baseURL.value = state.baseURL;
@@ -819,7 +819,7 @@ function triggerAlert(keywords) {
   playAlertSound();
   try {
     if (Notification.permission === 'granted') {
-      new Notification('SmolVLM Alert', { body: `Detected: ${keywords.join(', ')}` });
+      new Notification('Vidit Alert', { body: `Detected: ${keywords.join(', ')}` });
     } else if (Notification.permission !== 'denied') {
       Notification.requestPermission();
     }
@@ -934,7 +934,7 @@ function loadPreset(name) {
 }
 
 function getCustomPresets() {
-  try { return JSON.parse(localStorage.getItem('smolvlm-presets') || '{}'); } catch (e) { return {}; }
+  try { return JSON.parse(localStorage.getItem('vidit-presets') || '{}'); } catch (e) { return {}; }
 }
 
 function saveCustomPreset(name) {
@@ -946,7 +946,7 @@ function saveCustomPreset(name) {
     interval: intervalSelect.value,
     motionSensitivity: motionSensitivity.value
   };
-  localStorage.setItem('smolvlm-presets', JSON.stringify(presets));
+  localStorage.setItem('vidit-presets', JSON.stringify(presets));
   const opt = document.createElement('option');
   opt.value = name;
   opt.textContent = name;
@@ -1001,7 +1001,7 @@ function setupKeyboardShortcuts() {
 // ============================================================
 loadState();
 // Respect system dark mode preference if user hasn't explicitly toggled
-const stored = JSON.parse(localStorage.getItem('smolvlm-state') || '{}');
+const stored = JSON.parse(localStorage.getItem('vidit-state') || '{}');
 if (stored.dark === undefined && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   document.body.classList.add('dark');
 }

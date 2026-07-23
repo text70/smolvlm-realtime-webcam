@@ -1,8 +1,8 @@
-# SmolVLM real-time camera demo
+# Vidit
 
 ![demo](./demo.png)
 
-This repository is a simple demo for how to use llama.cpp server with SmolVLM 500M to get real-time object detection
+Real-time camera surveillance and scene analysis using llama.cpp server with a multimodal vision model
 
 ## How to setup
 

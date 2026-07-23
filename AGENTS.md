@@ -1,4 +1,4 @@
-# SmolVLM Real-Time Webcam — Agent Guide
+# Vidit — Agent Guide
 
 ## Stack
 
