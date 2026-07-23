@@ -2,7 +2,7 @@
 
 ![demo](./demo.png)
 
-Real-time camera surveillance and scene analysis powered by a local multimodal vision model (llama.cpp).
+Real-time camera surveillance and scene analysis powered by your favorite local VLM (llama.cpp).
 
 All processing stays on your machine — no cloud, no telemetry, no external servers.
 
@@ -20,7 +20,7 @@ node server.js
 
 ## Requirements
 
-- [llama.cpp](https://github.com/ggml-org/llama.cpp) with a multimodal GGUF model
+- [llama.cpp](https://github.com/ggml-org/llama.cpp) with a multimodal VLM GGUF model
 - [Node.js](https://nodejs.org) 18+
 - A browser that supports `navigator.mediaDevices.getUserMedia` (Chrome, Firefox, Edge, Safari)
 
@@ -29,7 +29,7 @@ node server.js
 ### 1. Start the vision model
 
 ```sh
-llama-server -hf ggml-org/SmolVLM-500M-Instruct-GGUF -ngl 99
+llama-server -hf ggml-org/<your-favorite-VLM>-GGUF -ngl 99
 ```
 
 Default port is `http://localhost:8080`. Add `-ngl 99` for GPU acceleration. See [supported models](https://github.com/ggml-org/llama.cpp/blob/master/docs/multimodal.md).
