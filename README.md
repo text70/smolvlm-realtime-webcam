@@ -30,6 +30,14 @@ node server.js
 
 ```sh
 llama-server -hf ggml-org/<your-favorite-VLM>-GGUF -ngl 99
+
+or
+
+# using local file
+llama-server -m gemma-3-4b-it-Q4_K_M.gguf --mmproj mmproj-gemma-3-4b-it-Q4_K_M.gguf
+
+# no GPU offload
+llama-server -hf ggml-org/gemma-3-4b-it-GGUF --no-mmproj-offload
 ```
 
 Default port is `http://localhost:8080`. Add `-ngl 99` for GPU acceleration. See [supported models](https://github.com/ggml-org/llama.cpp/blob/master/docs/multimodal.md).
