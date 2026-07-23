@@ -10,7 +10,7 @@ All processing stays on your machine — no cloud, no telemetry, no external ser
 
 ```sh
 # 1. Start the vision model
-llama-server -hf ggml-org/SmolVLM-500M-Instruct-GGUF -ngl 99
+llama-server -hf ggml-org/<your-favorite-VLM>-GGUF -ngl 99
 
 # 2. Start the HTTPS server
 node server.js
